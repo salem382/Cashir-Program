@@ -1,7 +1,7 @@
 # Cashir-Program with React js
 
 ## Website Demo
-https://dashboard-self-two.vercel.app/
+https://cashir-program.vercel.app/
 
 ## Installation and Setup Instructions
 
@@ -21,11 +21,7 @@ To Visit App:
 
 ## what i use 
 
-* useContext
-* useReducer
-* material ui component
-* material ui icons
-* Recharts
-* sass
-* React router dom
+* Redux-toolkit
+* bootstrap
+*sass
 
