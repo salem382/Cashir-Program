@@ -23,5 +23,5 @@ To Visit App:
 
 * Redux-toolkit
 * bootstrap
-*sass
+* sass
 
