@@ -1,0 +1,29 @@
+.add-new {
+    .first-input {
+        border: 1px solid #dbdbdb;
+        border-radius: 5px;
+        padding: 5px;
+        &:focus {
+            outline: 0;
+        }
+    }
+    .table-header {
+        li {
+            text-align: center;
+            width:25%;
+        }
+    }
+    .table-body {
+        & > div {
+            width:25%;
+            input {
+                display: block;
+                margin: auto;
+            }
+        }
+    }
+}
+.table-content {
+    margin-top: 40px;
+    
+}

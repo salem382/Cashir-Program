@@ -1,0 +1,30 @@
+.disount-container {
+    .percentage-text {
+        height: 21px;
+        margin-top: -18px !important;
+    }
+   .percentage {
+    height: 30px;
+        width: 60px;
+        border-radius: 20px;
+        background: rgb(205, 205, 205);
+        cursor: pointer;
+        transition: all .5s ease-in-out;
+        & > div {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+        } 
+        &.active {
+            background-color: #5074ca;
+            & > div {
+                left: 57%;
+            }
+        }
+   }
+   
+}

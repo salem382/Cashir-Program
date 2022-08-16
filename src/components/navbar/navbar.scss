@@ -1,0 +1,32 @@
+.navbar {
+    .nav-content {
+        width: 100%;
+        display:grid;
+        grid-template-columns: auto 200px;
+        justify-content: space-between;
+        align-items: center;
+        img {
+            width: 60px;
+        }
+        .icon {
+            cursor: pointer;
+        }
+        .links {
+            background-color: #fff;
+            border-radius: 3px;
+            transition: all .2s;
+            top:30px;
+            right: 0;
+            li {
+                margin: 10px 0;
+                cursor: pointer;
+                color: #999;
+                font-weight: 600;
+                translate: all .3s;
+                &:hover {
+                    color: #1C3879;
+                }
+            }
+        }
+    }
+}

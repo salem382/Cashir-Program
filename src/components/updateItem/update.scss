@@ -1,0 +1,50 @@
+.upeate-item {
+    .search-input {
+        border: 1px solid #dbdbdb;
+        border-radius: 5px;
+        padding: 5px;
+        width: 250px;
+        &:focus {
+            outline: 0;
+        }
+    }
+    .menu-container {
+        .menu {
+            background-color: #fff;
+            width: 250px;
+            max-height: 200px;
+            padding:10px;
+            overflow-y: scroll;
+            text-align: right;
+            li {
+                line-height: 1.8;
+                cursor: pointer;
+                padding:10px 3px;
+                border-bottom: 1px solid rgb(225, 225, 225);
+                &:hover, &.active {
+                    background-color: #6d8cd5;
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .product-content {
+        ul li {
+            width: 25%;
+            text-align: center;
+        }
+        form input {
+            width: 23%;
+            display: block;
+            margin: auto;
+        }
+    }
+    .btn-color {
+        margin-left: auto;
+        display: block;
+        width: 100px;
+        margin-top: 31px;
+        margin-right: 11px;
+        color: #fff;
+    }
+}
