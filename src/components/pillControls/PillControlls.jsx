@@ -4,21 +4,14 @@ import './pillcontrols.scss';
 import {useState} from 'react';
 import {discount, getTotal, deleteAll, addToShift, deleteTotal} from '../../store/pillSlice'
 import {handleNumbers} from '../../store/productsSlice'
-import { useEffect } from 'react';
+
 
 const PillControls = () => {
 
     const dispatch = useDispatch (); 
     const {pill} = useSelector(state => state.pill);
-    const {deleted} = useSelector(state => state.products);
+    const {products} = useSelector(state => state.products);
     const [openPrcentage, setOpenPrcentage] = useState(false);
-    const [changePay, setChangePay] = useState(false)// dy 3l4an mbyl72a4y y4waf deleted at8yarat wlaa l2aa
-   useEffect(() => {
-    if (deleted) {
-        dispatch(deleteAll());
-        dispatch(addToShift());
-    }
-   },[changePay])
 
     const handleChangeDiscount = (e) => {
         if (e.target.value === '') {
@@ -32,8 +25,18 @@ const PillControls = () => {
         }
     }
     const handlePay = () => {
-        dispatch(handleNumbers(pill.pillItems))
-        setChangePay((prev) => !prev);
+
+        pill.pillItems.forEach(element => {
+            let i = products.findIndex(item => item.name === element.name)
+            console.log (products)
+            if (products[i].numbers >= 1 && Number(element.count) <= products[i].numbers ) {
+                dispatch(handleNumbers([i, Number(element.count)]))
+                dispatch(deleteAll());
+                dispatch(addToShift());
+            } else {
+                alert(`numbers in ${products[i].name} doesn't allow`);
+            }
+        })
     }
     const handleDeleteAll = () => {
         dispatch(deleteAll())

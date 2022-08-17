@@ -2,8 +2,7 @@ import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
     products : localStorage.getItem('productsItems') === null ? [] :
-    JSON.parse(localStorage.getItem('productsItems')),
-    deleted : false
+    JSON.parse(localStorage.getItem('productsItems'))
 }
 
 const productsSlice = createSlice({
@@ -22,17 +21,7 @@ const productsSlice = createSlice({
         },
         handleNumbers : (state, action) => {
            
-            console.log (action.payload);
-            action.payload.forEach(element => {
-                let i = state.products.findIndex(item => item.name === element.name)
-                if (state.products[i].numbers >= 1) {
-                    state.products[i].numbers -= 1;
-                    state.deleted = true;
-                } else {
-                    state.deleted = false;
-                    alert(`numbers in ${state.products[i].name} doesn't allow`);
-                }
-            })
+            state.products[action.payload[0]].numbers -=  action.payload[1];
             localStorage.setItem('productsItems',JSON.stringify(state.products));
         }
     }
